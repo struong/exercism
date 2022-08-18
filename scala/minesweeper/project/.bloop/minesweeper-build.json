@@ -2,15 +2,15 @@
     "version": "1.4.0",
     "project": {
         "name": "minesweeper-build",
-        "directory": "C:\\Users\\Stee\\Exercism\\scala\\minesweeper\\project",
-        "workspaceDir": "C:\\Users\\Stee\\Exercism\\scala\\minesweeper\\project",
+        "directory": "C:\\Users\\Stee\\exercism\\scala\\minesweeper\\project",
+        "workspaceDir": "C:\\Users\\Stee\\exercism\\scala\\minesweeper\\project",
         "sources": [
-            "C:\\Users\\Stee\\Exercism\\scala\\minesweeper\\project\\src\\main\\scala",
-            "C:\\Users\\Stee\\Exercism\\scala\\minesweeper\\project\\src\\main\\scala-2.12",
-            "C:\\Users\\Stee\\Exercism\\scala\\minesweeper\\project\\src\\main\\scala-2",
-            "C:\\Users\\Stee\\Exercism\\scala\\minesweeper\\project\\src\\main\\java",
-            "C:\\Users\\Stee\\Exercism\\scala\\minesweeper\\project\\src\\main\\scala-sbt-1.0",
-            "C:\\Users\\Stee\\Exercism\\scala\\minesweeper\\project\\target\\scala-2.12\\sbt-1.0\\src_managed\\main"
+            "C:\\Users\\Stee\\exercism\\scala\\minesweeper\\project\\src\\main\\scala",
+            "C:\\Users\\Stee\\exercism\\scala\\minesweeper\\project\\src\\main\\scala-2.12",
+            "C:\\Users\\Stee\\exercism\\scala\\minesweeper\\project\\src\\main\\scala-2",
+            "C:\\Users\\Stee\\exercism\\scala\\minesweeper\\project\\src\\main\\java",
+            "C:\\Users\\Stee\\exercism\\scala\\minesweeper\\project\\src\\main\\scala-sbt-1.0",
+            "C:\\Users\\Stee\\exercism\\scala\\minesweeper\\project\\target\\scala-2.12\\sbt-1.0\\src_managed\\main"
         ],
         "dependencies": [
             
@@ -103,11 +103,11 @@
             "C:\\Users\\Stee\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\reactivestreams\\reactive-streams\\1.0.3\\reactive-streams-1.0.3.jar",
             "C:\\Users\\Stee\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\com\\typesafe\\config\\1.4.2\\config-1.4.2.jar"
         ],
-        "out": "C:\\Users\\Stee\\Exercism\\scala\\minesweeper\\project\\.bloop\\minesweeper-build",
-        "classesDir": "C:\\Users\\Stee\\Exercism\\scala\\minesweeper\\project\\.bloop\\minesweeper-build\\scala-2.12\\sbt-1.0\\classes",
+        "out": "C:\\Users\\Stee\\exercism\\scala\\minesweeper\\project\\.bloop\\minesweeper-build",
+        "classesDir": "C:\\Users\\Stee\\exercism\\scala\\minesweeper\\project\\.bloop\\minesweeper-build\\scala-2.12\\sbt-1.0\\classes",
         "resources": [
-            "C:\\Users\\Stee\\Exercism\\scala\\minesweeper\\project\\src\\main\\resources",
-            "C:\\Users\\Stee\\Exercism\\scala\\minesweeper\\project\\target\\scala-2.12\\sbt-1.0\\resource_managed\\main"
+            "C:\\Users\\Stee\\exercism\\scala\\minesweeper\\project\\src\\main\\resources",
+            "C:\\Users\\Stee\\exercism\\scala\\minesweeper\\project\\target\\scala-2.12\\sbt-1.0\\resource_managed\\main"
         ],
         "scala": {
             "organization": "org.scala-lang",
@@ -200,7 +200,7 @@
             "config": {
                 "home": "C:\\Program Files\\Eclipse Adoptium\\jdk-11.0.14.101-hotspot",
                 "options": [
-                    "-Duser.dir=C:\\Users\\Stee\\Exercism\\scala\\minesweeper\\project"
+                    "-Duser.dir=C:\\Users\\Stee\\exercism\\scala\\minesweeper\\project"
                 ]
             },
             "mainClass": [

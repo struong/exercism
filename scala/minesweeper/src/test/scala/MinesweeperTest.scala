@@ -6,14 +6,17 @@ import org.scalatest.matchers.should.Matchers
 class MinesweeperTest extends AnyFunSuite with Matchers {
 
   test("no rows") {
+    pending
     Minesweeper.annotate(List()) should be(List())
   }
 
   test("no columns") {
+    pending
     Minesweeper.annotate(List("")) should be(List(""))
   }
 
   test("no mines") {
+    pending
     Minesweeper.annotate(List("   ",
                               "   ",
                               "   ")) should be(
@@ -63,7 +66,6 @@ class MinesweeperTest extends AnyFunSuite with Matchers {
   }
 
   test("vertical line") {
-    pending
     Minesweeper.annotate(List(" ",
                               "*",
                               " ",
