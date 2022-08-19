@@ -10,20 +10,18 @@ object Minesweeper {
     input.lift(x).flatMap(_.lift(y)).contains('*')
 
   def neighbourMines(x: Int, y: Int, input: List[List[Char]]): Int = {
-    var mines = 0
-    val range = -1 to 1
+    val range = (-1 to 1)
 
-    for(i <- range) { 
-      for(j <- range) { 
-          if(i != 0 || j != 0) { 
-            if(hasMine(x + i, y + j, input)) { 
-               mines = mines + 1
-            }
-          }
+    range.foldLeft(0) { case (totalMines, i) =>
+      val currentMineCount = range.foldLeft(0) { case (minesAcc, j) =>
+        if ((i != 0 || j != 0) && (hasMine(x + i, y + j, input))) {
+          minesAcc + 1
+        } else
+          minesAcc
       }
+      
+      totalMines + currentMineCount
     }
-
-    mines
   }
 
   def mapMines(input: List[List[Char]]): List[String] = {
