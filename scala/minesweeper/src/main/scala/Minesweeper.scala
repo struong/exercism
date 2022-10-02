@@ -2,58 +2,39 @@ object Minesweeper {
   def annotate(input: List[String]): List[String] = {
     input match {
       case Nil => List.empty
-      case _   => stuff(input.map(_.toList))
+      case _   => mapMines(input.map(_.toList))
     }
   }
 
-  def stuff(input: List[List[Char]]): List[String] = {
-    println(input)
+  def hasMine(x: Int, y: Int, input: List[List[Char]]): Boolean =
+    input.lift(x).flatMap(_.lift(y)).contains('*')
 
-    var board = Array.fill(input.size, input.size)(' ')
+  def neighbourMines(x: Int, y: Int, input: List[List[Char]]): Int = {
+    val range = (-1 to 1)
+
+    range.foldLeft(0) { case (totalMines, i) =>
+      val currentMineCount = range.foldLeft(0) { case (minesAcc, j) =>
+        if ((i != 0 || j != 0) && (hasMine(x + i, y + j, input))) {
+          minesAcc + 1
+        } else
+          minesAcc
+      }
+      
+      totalMines + currentMineCount
+    }
+  }
+
+  def mapMines(input: List[List[Char]]): List[String] = {
+    val board = Array.fill(input.size, input.headOption.fold(0)(_.size))(' ')
 
     for (row <- 0 until input.size) {
       for (column <- 0 until input(row).size) {
-        if (input.lift(row).flatMap(_.lift(column)).contains('*')) {
+        if (hasMine(row, column, input)) {
           board(row)(column) = '*'
         } else {
-          val topLeftHasMine =
-            input.lift(row - 1).flatMap(_.lift(column - 1)).contains('*')
-          val topHasMine =
-            input.lift(row - 1).flatMap(_.lift(column)).contains('*')
-          val topRightHasMine =
-            input.lift(row - 1).flatMap(_.lift(column + 1)).contains('*')
-
-          val leftHasMine =
-            input.lift(row).flatMap(_.lift(column - 1)).contains('*')
-          val rightHasMine =
-            input.lift(row).flatMap(_.lift(column + 1)).contains('*')
-
-          val bottomLeftHasMine =
-            input.lift(row + 1).flatMap(_.lift(column - 1)).contains('*')
-          val bottomHasMine =
-            input.lift(row + 1).flatMap(_.lift(column)).contains('*')
-          val bottomRightHasMine =
-            input.lift(row + 1).flatMap(_.lift(column + 1)).contains('*')
-
-          println(
-            s"minesSeq = ${Seq(topLeftHasMine, topHasMine, topRightHasMine, leftHasMine, rightHasMine, bottomLeftHasMine, bottomHasMine, bottomRightHasMine)}"
-          )
-          val mines = Seq(
-            topLeftHasMine,
-            topHasMine,
-            topRightHasMine,
-            leftHasMine,
-            rightHasMine,
-            bottomLeftHasMine,
-            bottomHasMine,
-            bottomRightHasMine
-          ).count(_ == true)
-          println(s"row = $row")
-          println(s"column = $column")
-          println(s"mines = $mines")
-
-          if(mines != 0) 
-            board(row)(column) = mines.toString().charAt(0)
+          val mines = neighbourMines(row, column, input)
+          if (mines != 0)
+            board(row)(column) = (48 + mines).toChar
         }
       }
     }
